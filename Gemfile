@@ -74,3 +74,4 @@ end
 # Gemas agregadas por mi:
 gem 'faker'
 gem 'annotate'
+gem 'pagy'
