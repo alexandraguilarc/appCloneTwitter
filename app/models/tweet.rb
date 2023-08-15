@@ -9,4 +9,8 @@
 #  updated_at  :datetime         not null
 #
 class Tweet < ApplicationRecord
+    validates :description, presence: true,
+                            length: { maximum: 150 }
+    validates :userName,    presence: true,
+                            length: { maximum: 50 }
 end

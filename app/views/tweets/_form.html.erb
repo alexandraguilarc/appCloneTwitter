@@ -11,17 +11,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+    <%= form.text_area :description, class:"form-control", rows: "3", placeholder: "Aquí ingresa tu tweet" %>
   </div>
-
-  <div>
-    <%= form.label :userName, style: "display: block" %>
-    <%= form.text_field :userName %>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nombre de usuario</label>
+     <%= form.text_field :userName, class:"form-control", placeholder: "Aquí ingresa tu nombre" %>
   </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= form.submit "Publicar Tweet", class:"btn btn-primary" %>
 <% end %>
