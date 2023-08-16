@@ -13,4 +13,8 @@ class Tweet < ApplicationRecord
                             length: { maximum: 150 }
     validates :userName,    presence: true,
                             length: { maximum: 50 }
+
+    def self.ransackable_attributes(auth_object = nil)
+        ["created_at", "description", "id", "updated_at", "userName"]
+    end
 end

@@ -3,8 +3,10 @@ class TweetsController < ApplicationController
 
   # GET /tweets or /tweets.json
   def index
-    #@tweets = Tweet.all
-    @pagy, @tweets = pagy(Tweet.all)
+    #@tweets = Tweet.all.order(created_at: :asc)
+    #@pagy, @tweets = pagy(Tweet.all)
+    @q = Tweet.ransack(params[:q])
+    @pagy, @tweets = pagy_countless(@q.result(distinct: true).order(created_at: :desc))
   end
 
   # GET /tweets/1 or /tweets/1.json

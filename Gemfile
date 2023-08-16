@@ -75,3 +75,4 @@ end
 gem 'faker'
 gem 'annotate'
 gem 'pagy'
+gem 'ransack'
